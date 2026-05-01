@@ -29,7 +29,7 @@
     <header class="hero">
         <div class="hero-content-wrapper reveal">
             <div class="profile-container">
-                <img src="Profile.jpg" alt="Akshat Singh" class="profile-img">
+                <img src="profile.jpg" alt="Akshat Singh" class="profile-img">
                 <div class="profile-glow"></div>
             </div>
             <h1 class="hero-title">MYSTERIO</h1>
@@ -41,6 +41,7 @@
         </div>
     </header>
 
+    <!-- 01. CREDENTIALS SECTION -->
     <section class="section" id="credentials">
         <div class="container">
             <span class="label reveal">01. CREDENTIALS</span>
@@ -80,12 +81,85 @@
         </div>
     </section>
 
-    <section class="section">
+    <!-- 01.2 DIGITAL BADGES SECTION -->
+<section class="section" id="badges">
+    <div class="container">
+        <span class="label reveal">01.2 VERIFIED BADGES</span>
+        <h2 class="section-title reveal">Digital <br>Achievements</h2>
+        
+        <div class="badge-grid reveal">
+    <!-- Active Badge: HTB Cyber Starter -->
+    <div class="badge-card active">
+        <div class="badge-icon-wrapper">
+            <img src="Cyber-starter-badge.jpg"HTB Cyber Starter" class="badge-img">
+        </div>
+        <div class="badge-info">
+            <span class="issuer">HTB Academy</span>
+            <h4>HTB Cyber Starter</h4>
+        </div>
+        <div class="badge-glow"></div>
+    </div>
+
+    <!-- Coming Soon Placeholder 1 -->
+    <div class="badge-card upcoming">
+        <div class="badge-icon-wrapper">
+            <i class="fas fa-lock-open"></i>
+        </div>
+        <div class="badge-info">
+            <span class="issuer">Cisco Networking</span>
+            <h4>Coming Soon</h4>
+        </div>
+    </div>
+
+    <!-- Coming Soon Placeholder 2 -->
+    <div class="badge-card upcoming">
+        <div class="badge-icon-wrapper">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="badge-info">
+            <span class="issuer">TryHackMe</span>
+            <h4>Processing...</h4>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+    
+    
+
+    <!-- 02. CREATIVE WORKS SECTION -->
+    <section class="section" id="poetry">
         <div class="container">
-            <span class="label reveal">02. CONNECT</span>
+            <span class="label reveal">03. CREATIVE WORKS</span>
+            <h2 class="section-title reveal">Poetic <br>Dimensions</h2>
+            
+            <div class="bento-grid reveal">
+                <a href="https://words-by-akshat.vercel.app/" target="_blank" class="poetry-card">
+                    <div class="glow-effect"></div>
+                    <div class="bento-icon"><i class="fas fa-pen-nib"></i></div>
+                    <div class="bento-content">
+                        <span class="platform">Words By Akshat</span>
+                        <span class="username">Personal Poetry Collection</span>
+                    </div>
+                </a>
+
+                <a href="https://PoeticSoulWorld.vercel.app/" target="_blank" class="poetry-card">
+                    <div class="glow-effect"></div>
+                    <div class="bento-icon"><i class="fas fa-feather-alt"></i></div>
+                    <div class="bento-content">
+                        <span class="platform">Poetic Soul World</span>
+                        <span class="username">Community & Soulful Verses</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+<section class="section" id="connect">
+        <div class="container">
+            <span class="label reveal">03. CONNECT</span>
             <h2 class="section-title reveal">Digital Presence</h2>
             <div class="social-grid reveal">
-                
                 <a href="https://github.com/Itz-Akshat-singh" target="_blank" class="social-card">
                     <div class="social-logo"><i class="fab fa-github"></i></div>
                     <div class="social-meta">
@@ -117,53 +191,54 @@
                         <span class="username">Akshat_Singh</span>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
 
-            </div>
-            <section class="section" id="contact">
-    <div class="container">
-        <span class="label reveal">03. CONTACT</span>
-        <h2 class="section-title reveal">Reach Out</h2>
-        
-        <div class="terminal reveal">
-            <div class="terminal-bar">
-                <div class="btns">
-                    <span class="r"></span>
-                    <span class="y"></span>
-                    <span class="g"></span>
-                </div>
-                <div class="t-title">bash — contact_mysterio.sh</div>
-            </div>
+    <!-- 04. CONTACT SECTION -->
+    <section class="section" id="contact">
+        <div class="container">
+            <span class="label reveal">04. CONTACT</span>
+            <h2 class="section-title reveal">Reach Out</h2>
             
-            <div class="terminal-body">
-                <div class="log">
-                    <p class="cmd">$ ping akshat_singh</p>
-                    <p class="reply">PING akshat_singh (127.0.0.1): 56 data bytes</p>
-                    <p class="reply success">Status: Connection established. Ready to collaborate.</p>
+            <div class="terminal reveal">
+                <div class="terminal-bar">
+                    <div class="btns">
+                        <span class="r"></span>
+                        <span class="y"></span>
+                        <span class="g"></span>
+                    </div>
+                    <div class="t-title">bash — contact_mysterio.sh</div>
                 </div>
+                
+                <div class="terminal-body">
+                    <div class="log">
+                        <p class="cmd">$ ping akshat_singh</p>
+                        <p class="reply">PING akshat_singh (127.9.9.2): 56 data bytes</p>
+                        <p class="reply success">Status: Connection established. Ready to collaborate.</p>
+                    </div>
 
-                <form action="https://formspree.io/f/xgorgegr" method="POST" class="contact-form" id="my-form">
-    <div class="inp-group">
-        <label>// ENTER NAME</label>
-        <input type="text" name="name" placeholder="Moonie" required>
-    </div>
-    <div class="inp-group">
-        <label>// ENTER EMAIL</label>
-        <input type="email" name="email" placeholder="mysterio@example.com" required>
-    </div>
-    <div class="inp-group">
-        <label>// MESSAGE DATA</label>
-        <textarea name="message" placeholder="Hey Mysterio, I wanted to reach out about..." rows="4" required></textarea>
-    </div>
-    <button type="submit" class="exec-btn" id="submit-btn">Execute Send_Message();</button>
-</form>
+                    <form action="https://formspree.io/f/xgorgegr" method="POST" class="contact-form" id="my-form">
+                        <div class="inp-group">
+                            <label>// ENTER NAME</label>
+                            <input type="text" name="name" placeholder="Moonie" required>
+                        </div>
+                        <div class="inp-group">
+                            <label>// ENTER EMAIL</label>
+                            <input type="email" name="email" placeholder="mysterio@example.com" required>
+                        </div>
+                        <div class="inp-group">
+                            <label>// MESSAGE DATA</label>
+                            <textarea name="message" placeholder="Hey Mysterio, I wanted to reach out about..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="exec-btn" id="submit-btn">Execute Send_Message();</button>
+                    </form>
+                </div>
             </div>
-        </div>
 
-        <div class="footer-note reveal">
-            <p>Join the community: <a href="https://t.me/PoeticSoulWorld" target="_blank">@PoeticSoulWorld</a></p>
-        </div>
-    </div>
-</section>
+            <div class="footer-note reveal">
+                <p>Join the community: <a href="https://t.me/PoeticSoulWorld" target="_blank">@PoeticSoulWorld</a></p>
+            </div>
         </div>
     </section>
 
