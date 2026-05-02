@@ -29,7 +29,7 @@
     <header class="hero">
         <div class="hero-content-wrapper reveal">
             <div class="profile-container">
-                <img src="Profile.jpg" alt="Akshat Singh" class="profile-img">
+                <img src="profile.jpg" alt="Akshat Singh" class="profile-img">
                 <div class="profile-glow"></div>
             </div>
             <h1 class="hero-title">MYSTERIO</h1>
@@ -41,75 +41,111 @@
         </div>
     </header>
 
-    <!-- 01. CREDENTIALS SECTION -->
-    <section class="section" id="credentials">
-        <div class="container">
-            <span class="label reveal">01. CREDENTIALS</span>
-            <h2 class="section-title reveal">Cyber Security <br>Certifications</h2>
-            
-            <div class="cert-grid">
-                <div class="cert-card reveal">
-                    <div class="cert-img-container">
-                        <img src="Certificate-Penetration-testing-expert.jpg" alt="HTB CPTS">
-                    </div>
-                    <div class="cert-info">
-                        <h3>HTB CPTS</h3>
-                        <p>Certified Penetration Testing Specialist.</p>
-                    </div>
+<!-- 01. CREDENTIALS SECTION -->
+<section class="section" id="credentials">
+    <div class="container">
+        <span class="label">01. CREDENTIALS</span>
+        <h2 class="section-title">Cyber Security <br>Certifications</h2>
+        
+        <div class="cert-grid">
+            <!-- Card 1 -->
+            <div class="cert-card" onclick="showPopup('Certificate-Penetration-testing-expert.jpg', 'HTB CPTS')">
+                <div class="cert-img-box">
+                    <img src="Certificate-Penetration-testing-expert.jpg" alt="HTB Certificate">
                 </div>
-
-                <div class="cert-card reveal" style="transition-delay: 0.1s;">
-                    <div class="cert-img-container">
-                        <img src="Certificate-Ethical-Hacking.jpg" alt="Ethical Hacking 101">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Ethical Hacking 101</h3>
-                        <p>Simplilearn — Beginners guide to Hacking.</p>
-                    </div>
+                <div class="cert-info">
+                    <h4>HTB CPTS</h4>
+                    <p>Certified Pentesting Specialist</p>
                 </div>
+            </div>
 
-                <div class="cert-card reveal" style="transition-delay: 0.2s;">
-                    <div class="cert-img-container">
-                        <img src="Certificate-Cyber-Security.jpg" alt="Cyber Security Intro">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Cyber Security Intro</h3>
-                        <p>Simplilearn — Core security foundations.</p>
-                    </div>
+            <!-- Card 2 -->
+            <div class="cert-card" onclick="showPopup('Certificate-Ethical-Hacking.jpg', 'Ethical Hacking 101')">
+                <div class="cert-img-box">
+                    <img src="Certificate-Ethical-Hacking.jpg" alt="Ethical Hacking">
+                </div>
+                <div class="cert-info">
+                    <h4>Ethical Hacking 101</h4>
+                    <p>Simplilearn</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="cert-card" onclick="showPopup('Certificate-Cyber-Security.jpg', 'Cyber Security Intro')">
+                <div class="cert-img-box">
+                    <img src="Certificate-Cyber-Security.jpg" alt="Cyber Security">
+                </div>
+                <div class="cert-info">
+                    <h4>Cyber Security Intro</h4>
+                    <p>Simplilearn</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="cert-card" onclick="showPopup('Linux-Unattached-Course-Certificate.png', 'Linux Unhatched')">
+                <div class="cert-img-box">
+                    <img src="Linux-Unattached-Course-Certificate.png" alt="Linux Certificate">
+                </div>
+                <div class="cert-info">
+                    <h4>Linux Unhatched</h4>
+                    <p>Cisco Networking Academy</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="cert-card" onclick="showPopup('Linux-Unattached-Course-badge.png', 'NDG Achievement')">
+                <div class="cert-img-box">
+                    <img src="Linux-Unattached-Course-badge.png" alt="NDG Badge">
+                </div>
+                <div class="cert-info">
+                    <h4>NDG Achievement</h4>
+                    <p>Professional Linux Proficiency</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Pop-up Overlay -->
+<div id="certPopup" class="cert-popup" onclick="closePopup()">
+    <div class="popup-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <img id="popupImg" src="" alt="Certificate Preview">
+        <h3 id="popupTitle" style="color: #fff; margin-top: 15px; text-align: center;"></h3>
+        <div class="timer-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+    </div>
+</div> 
 
     <!-- 01.2 DIGITAL BADGES SECTION -->
 <section class="section" id="badges">
     <div class="container">
-        <span class="label reveal">02. VERIFIED BADGES</span>
+        <span class="label reveal">01.2 VERIFIED BADGES</span>
         <h2 class="section-title reveal">Digital <br>Achievements</h2>
         
         <div class="badge-grid reveal">
-    <!-- Active Badge: HTB Cyber Starter -->
-    <div class="badge-card active">
-        <div class="badge-icon-wrapper">
-            <img src="Cyber-starter-badge.jpg"HTB Cyber Starter" class="badge-img">
-        </div>
-        <div class="badge-info">
-            <span class="issuer">HTB Academy</span>
-            <h4>HTB Cyber Starter</h4>
-        </div>
-        <div class="badge-glow"></div>
+    <!-- HTB Badge -->
+<div class="badge-card active htb-style">
+    <div class="badge-icon-wrapper">
+        <img src="Cyber-starter-badge.jpg" class="badge-img">
     </div>
+    <div class="badge-info">
+        <span class="issuer">HTB Academy</span>
+        <h4>Cyber Starter</h4>
+    </div>
+</div>
 
-    <!-- Coming Soon Placeholder 1 -->
-    <div class="badge-card upcoming">
-        <div class="badge-icon-wrapper">
-            <i class="fas fa-lock-open"></i>
-        </div>
-        <div class="badge-info">
-            <span class="issuer">Cisco Networking</span>
-            <h4>Coming Soon</h4>
-        </div>
+<!-- Cisco Badge -->
+<div class="badge-card active cisco-style">
+    <div class="badge-icon-wrapper">
+        <img src="linux-unhatched.png" class="badge-img"> <!-- image filename updated -->
     </div>
+    <div class="badge-info">
+        <span class="issuer">Cisco Networking Academy</span>
+        <h4>Linux Unhatched</h4>
+    </div>
+</div>
 
     <!-- Coming Soon Placeholder 2 -->
     <div class="badge-card upcoming">
@@ -157,7 +193,7 @@
     </section>
 <section class="section" id="connect">
         <div class="container">
-            <span class="label reveal">04. CONNECT</span>
+            <span class="label reveal">03. CONNECT</span>
             <h2 class="section-title reveal">Digital Presence</h2>
             <div class="social-grid reveal">
                 <a href="https://github.com/Itz-Akshat-singh" target="_blank" class="social-card">
@@ -198,7 +234,7 @@
     <!-- 04. CONTACT SECTION -->
     <section class="section" id="contact">
         <div class="container">
-            <span class="label reveal">05. CONTACT</span>
+            <span class="label reveal">04. CONTACT</span>
             <h2 class="section-title reveal">Reach Out</h2>
             
             <div class="terminal reveal">
