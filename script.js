@@ -130,3 +130,60 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+let autoClose;
+
+function showPopup(imgSrc) {
+    const popup = document.getElementById('certPopup');
+    const pImg = document.getElementById('popupImg');
+    const bar = document.querySelector('.timer-bar');
+
+    pImg.src = imgSrc;
+    popup.style.display = 'block';
+
+    // Reset and start animation
+    bar.classList.remove('animate-timer');
+    void bar.offsetWidth; // Force reflow
+    bar.classList.add('animate-timer');
+
+    // Auto close logic
+    clearTimeout(autoClose);
+    autoClose = setTimeout(() => {
+        closePopup();
+    }, 7000);
+}
+
+function closePopup() {
+    document.getElementById('certPopup').style.display = 'none';
+}
+let popupTimeout;
+
+function showPopup(imgSrc, title) {
+    const popup = document.getElementById('certPopup');
+    const pImg = document.getElementById('popupImg');
+    const pTitle = document.getElementById('popupTitle');
+    const pBar = document.getElementById('progressBar');
+
+    pImg.src = imgSrc;
+    pTitle.innerText = title;
+    popup.style.display = 'block';
+
+    // Animation restart
+    pBar.style.animation = 'none';
+    void pBar.offsetWidth; // Trigger reflow
+    pBar.style.animation = 'timerFill 7s linear forwards';
+
+    // Clear previous timer and set new one
+    clearTimeout(popupTimeout);
+    popupTimeout = setTimeout(() => {
+        closePopup();
+    }, 7000);
+}
+
+function closePopup() {
+    document.getElementById('certPopup').style.display = 'none';
+}
+
+// Esc key se bhi band ho jaye
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closePopup();
+});
