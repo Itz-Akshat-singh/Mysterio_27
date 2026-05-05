@@ -600,3 +600,24 @@ nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; j
     font-size: 30px;
     cursor: pointer;
 }
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 550px; /* Isse image control mein rahegi */
+    background: #0a0a0a;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.popup-content img {
+    width: 100%;
+    height: auto;
+    max-height: 75vh; 
+    object-fit: contain;
+    border-radius: 5px;
+}
