@@ -1,47 +1,51 @@
 /**
  * MYSTERIO PORTFOLIO - CORE ENGINE
- * Features: Discord Webhook, IP Tracker, Premium Cursor, Scroll Reveal
  */
 
 // --- 1. CONFIGURATION ---
-const DISCORD_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1499825178392395846/TYpjw_zFO4h24LVQAkdqqcNZNPGr5AiX23SMzQxrFjhDcxmkQ9ZJkwjWNvdCvoELe8RR"; 
+// Ek hi jagah webhook URL ko set rakha hai
+const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1521604338039132360/bcihAt7OVGLvYJggRejuZc6Fln-II01pZx1_RjZDMIvSOrz9OfWfPouDvYvQ2PZElixC"; 
 
 // --- 2. PREMIUM CURSOR LOGIC ---
 const dot = document.getElementById('cursor-dot');
 const outline = document.getElementById('cursor-outline');
 
 window.addEventListener('mousemove', (e) => {
-    // Immediate dot movement
-    dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    
-    // Smooth outline animation
-    outline.animate({
-        left: `${e.clientX}px`,
-        top: `${e.clientY}px`
-    }, { duration: 400, fill: "forwards" });
+    if(dot) dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    if(outline) {
+        outline.animate({
+            left: `${e.clientX}px`,
+            top: `${e.clientY}px`
+        }, { duration: 400, fill: "forwards" });
+    }
 });
 
-// Cursor scaling on hover
-const hoverTargets = 'a, button, .cert-card, .bento-item, input, textarea, .profile-img';
+// Cursor scaling on hover including all new additions
+const hoverTargets = 'a, button, .cert-card, .poetry-card, .tool-card, input, textarea, .profile-img, .dock-item, nav .logo';
 document.querySelectorAll(hoverTargets).forEach(item => {
     item.addEventListener('mouseenter', () => {
-        outline.style.transform = 'translate(-50%, -50%) scale(1.8)';
-        outline.style.background = 'rgba(255, 255, 255, 0.1)';
-        outline.style.borderColor = 'white';
+        if(outline) {
+            outline.style.transform = 'translate(-50%, -50%) scale(1.8)';
+            outline.style.background = 'rgba(255, 255, 255, 0.1)';
+            outline.style.borderColor = 'white';
+        }
     });
     item.addEventListener('mouseleave', () => {
-        outline.style.transform = 'translate(-50%, -50%) scale(1)';
-        outline.style.background = 'transparent';
-        outline.style.borderColor = 'var(--accent)';
+        if(outline) {
+            outline.style.transform = 'translate(-50%, -50%) scale(1)';
+            outline.style.background = 'transparent';
+            outline.style.borderColor = 'var(--accent)';
+        }
     });
 });
 
 // --- 3. LIVE FOLLOWER COUNTER ---
 const counterEl = document.getElementById('follower-count');
 const startCounter = () => {
+    if(!counterEl) return;
     let target = 30927;
     let current = 0;
-    let step = target / 90; // Speed control
+    let step = target / 90;
     
     const update = () => {
         if (current < target) {
@@ -56,18 +60,20 @@ const startCounter = () => {
 };
 setTimeout(startCounter, 1000);
 
-// --- 4. DISCORD WEBHOOK + IP TRACKER ---
-const contactForm = document.getElementById('my-form'); // Ensure your form has this ID
+// --- 4. DISCORD UPLINK ENGINE (DIRECT VIA REPO ENVIRONMENT) ---
+// FIXED: Yahan se double 'const' declaration ko poora hata diya hai taaki crash na ho
+const contactForm = document.getElementById('my-form');
 const submitBtn = document.getElementById('submit-btn');
 
 if(contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        submitBtn.innerText = "> Transmitting Data...";
-        submitBtn.disabled = true;
+        if(submitBtn) {
+            submitBtn.innerText = "> Transmitting Data...";
+            submitBtn.disabled = true;
+        }
 
-        // Fetch User IP
         let userIp = "Hidden/Unknown";
         try {
             const ipRes = await fetch('https://api.ipify.org?format=json');
@@ -75,20 +81,18 @@ if(contactForm) {
             userIp = ipData.ip;
         } catch (err) { console.error("IP Logging failed"); }
 
-        // Get Form Data
         const formData = new FormData(contactForm);
         const name = formData.get('name');
         const email = formData.get('email');
         const message = formData.get('message');
 
-        // Discord Embed Payload (Cyber Style)
         const payload = {
             embeds: [{
-                title: "🚨 INCOMING DATA PACKET",
-                color: 3066993, // Premium Green
+                title: "📡 INCOMING DATA PACKET",
+                color: 3066993,
                 fields: [
                     { name: "👤 IDENTITY", value: `\`${name}\``, inline: true },
-                    { name: "📧 ENDPOINT", value: `\`${email}\``, inline: true },
+                    { name: "📩 ENDPOINT", value: `\`${email}\``, inline: true },
                     { name: "🌐 SOURCE IP", value: `\`${userIp}\``, inline: false },
                     { name: "💬 TRANSMISSION", value: `>>> ${message}` }
                 ],
@@ -97,7 +101,6 @@ if(contactForm) {
             }]
         };
 
-        // Send to Discord
         try {
             const response = await fetch(DISCORD_WEBHOOK_URL, {
                 method: 'POST',
@@ -106,16 +109,20 @@ if(contactForm) {
             });
 
             if (response.ok) {
-                submitBtn.innerText = "SUCCESS: Message Executed";
-                submitBtn.style.background = "#27c93f";
+                if(submitBtn) {
+                    submitBtn.innerText = "SUCCESS: Message Executed";
+                    submitBtn.style.background = "#27c93f";
+                }
                 contactForm.reset();
             } else {
-                throw new Error("Webhook Error");
+                throw new Error("Transmission Rejected");
             }
         } catch (err) {
-            submitBtn.innerText = "ERROR: UPLINK FAILED";
-            submitBtn.style.background = "#ff5f56";
-            submitBtn.disabled = false;
+            if(submitBtn) {
+                submitBtn.innerText = "ERROR: UPLINK FAILED";
+                submitBtn.style.background = "#ff5f56";
+                submitBtn.disabled = false;
+            }
         }
     });
 }
@@ -130,31 +137,8 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-let autoClose;
 
-function showPopup(imgSrc) {
-    const popup = document.getElementById('certPopup');
-    const pImg = document.getElementById('popupImg');
-    const bar = document.querySelector('.timer-bar');
-
-    pImg.src = imgSrc;
-    popup.style.display = 'block';
-
-    // Reset and start animation
-    bar.classList.remove('animate-timer');
-    void bar.offsetWidth; // Force reflow
-    bar.classList.add('animate-timer');
-
-    // Auto close logic
-    clearTimeout(autoClose);
-    autoClose = setTimeout(() => {
-        closePopup();
-    }, 7000);
-}
-
-function closePopup() {
-    document.getElementById('certPopup').style.display = 'none';
-}
+// --- 6. CERTIFICATE POPUP SYSTEM ---
 let popupTimeout;
 
 function showPopup(imgSrc, title) {
@@ -163,27 +147,84 @@ function showPopup(imgSrc, title) {
     const pTitle = document.getElementById('popupTitle');
     const pBar = document.getElementById('progressBar');
 
-    pImg.src = imgSrc;
-    pTitle.innerText = title;
-    popup.style.display = 'block';
+    if (popup && pImg && pTitle && pBar) {
+        pImg.src = imgSrc;
+        pTitle.innerText = title;
+        popup.style.display = 'block';
 
-    // Animation restart
-    pBar.style.animation = 'none';
-    void pBar.offsetWidth; // Trigger reflow
-    pBar.style.animation = 'timerFill 7s linear forwards';
+        pBar.style.animation = 'none';
+        void pBar.offsetWidth; // Force reflow
+        pBar.style.animation = 'timerFill 7s linear forwards';
 
-    // Clear previous timer and set new one
-    clearTimeout(popupTimeout);
-    popupTimeout = setTimeout(() => {
-        closePopup();
-    }, 7000);
+        clearTimeout(popupTimeout);
+        popupTimeout = setTimeout(() => {
+            closePopup();
+        }, 7000);
+    }
 }
 
 function closePopup() {
-    document.getElementById('certPopup').style.display = 'none';
+    const popup = document.getElementById('certPopup');
+    if (popup) popup.style.display = 'none';
 }
 
-// Esc key se bhi band ho jaye
+// --- 7. DOCK INTERACTIVE TRACKER & TOOLS ENGINE ---
+const dockItems = document.querySelectorAll('.dock-item');
+const portfolioSections = document.querySelectorAll('section');
+
+function showToolPopup(name, description, link, terminalLog) {
+    const popup = document.getElementById('toolPopup');
+    const tName = document.getElementById('toolPopupName');
+    const tTitle = document.getElementById('toolDisplayTitle');
+    const tDesc = document.getElementById('toolDisplayDesc');
+    const tLog = document.getElementById('toolDisplayTerminal');
+    const tBtn = document.getElementById('toolExecuteBtn');
+
+    if (popup && tName && tTitle && tDesc && tLog && tBtn) {
+        tName.innerText = `${name.toLowerCase().replace(/\s+/g, '_')}.sh`;
+        tTitle.innerText = name;
+        tDesc.innerText = description;
+        tLog.innerText = `[SUCCESS] ${terminalLog}`;
+        tBtn.href = link;
+        popup.style.display = 'block';
+    }
+}
+
+function closeToolPopup() {
+    const popup = document.getElementById('toolPopup');
+    if (popup) popup.style.display = 'none';
+}
+
+// Window tracker logic for floating active states
+window.addEventListener('scroll', () => {
+    let currentSectionId = "";
+    
+    if (window.pageYOffset < 300) {
+        dockItems.forEach(item => item.classList.remove('active-dock'));
+        document.querySelector('.dock-profile-btn')?.classList.add('active-dock');
+        return;
+    }
+
+    portfolioSections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+            currentSectionId = section.getAttribute('id') || "";
+        }
+    });
+
+    dockItems.forEach(item => {
+        item.classList.remove('active-dock');
+        if (item.getAttribute('href') === `#${currentSectionId}`) {
+            item.classList.add('active-dock');
+        }
+    });
+});
+
+// ESC Key Event Handler for Global Close
 document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") closePopup();
+    if (e.key === "Escape") {
+        closePopup();
+        closeToolPopup();
+    }
 });
