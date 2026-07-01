@@ -19,8 +19,39 @@
     <div id="cursor-dot"></div>
     <div id="cursor-outline"></div>
 
+    <div class="floating-dock">
+        <a href="#" class="dock-item dock-profile-btn active-dock">
+            <i class="fas fa-user-circle"></i>
+            <span class="dock-label">Top</span>
+        </a>
+        <a href="#credentials" class="dock-item">
+            <i class="fas fa-award"></i>
+            <span class="dock-label">Credentials</span>
+        </a>
+        <a href="#badges" class="dock-item">
+            <i class="fas fa-shield-alt"></i>
+            <span class="dock-label">Badges</span>
+        </a>
+        <a href="#tools" class="dock-item">
+            <i class="fas fa-tools"></i>
+            <span class="dock-label">Tools</span>
+        </a>
+        <a href="#poetry" class="dock-item">
+            <i class="fas fa-pen-nib"></i>
+            <span class="dock-label">Poetry</span>
+        </a>
+        <a href="#connect" class="dock-item">
+            <i class="fas fa-share-alt"></i>
+            <span class="dock-label">Connect</span>
+        </a>
+        <a href="#contact" class="dock-item">
+            <i class="fas fa-terminal"></i>
+            <span class="dock-label">Contact</span>
+        </a>
+    </div>
+
     <nav>
-        <div class="logo">MYSTERIO</div>
+        <a href="" class="logo">MYSTERIO</a>
         <div class="live-counter">
             <span class="dot"></span> LIVE: <span id="follower-count">0</span>
         </div>
@@ -41,14 +72,12 @@
         </div>
     </header>
 
-<!-- 01. CREDENTIALS SECTION -->
 <section class="section" id="credentials">
     <div class="container">
         <span class="label">01. CREDENTIALS</span>
         <h2 class="section-title">Cyber Security <br>Certifications</h2>
         
         <div class="cert-grid">
-            <!-- Card 1 -->
             <div class="cert-card" onclick="showPopup('Certificate-Penetration-testing-expert.jpg', 'HTB CPTS')">
                 <div class="cert-img-box">
                     <img src="Certificate-Penetration-testing-expert.jpg" alt="HTB Certificate">
@@ -59,7 +88,6 @@
                 </div>
             </div>
             
-            <!-- Card 2 -->
             <div class="cert-card" onclick="showPopup('Indian-Government-CyberSecurity.png', 'Cyber Security ')">
                 <div class="cert-img-box">
                     <img src="Indian-Government-CyberSecurity.png" alt="Ethical Hacking">
@@ -70,7 +98,6 @@
                 </div>
             </div>
             
-            <!-- Card 2 -->
             <div class="cert-card" onclick="showPopup('Certificate-Ethical-Hacking.jpg', 'Ethical Hacking 101')">
                 <div class="cert-img-box">
                     <img src="Certificate-Ethical-Hacking.jpg" alt="Ethical Hacking">
@@ -81,7 +108,6 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="cert-card" onclick="showPopup('Certificate-Cyber-Security.jpg', 'Cyber Security Intro')">
                 <div class="cert-img-box">
                     <img src="Certificate-Cyber-Security.jpg" alt="Cyber Security">
@@ -92,7 +118,6 @@
                 </div>
             </div>
 
-            <!-- Card 4 -->
             <div class="cert-card" onclick="showPopup('Linux-Unattached-Course-Certificate.png', 'Linux Unhatched')">
                 <div class="cert-img-box">
                     <img src="Linux-Unattached-Course-Certificate.png" alt="Linux Certificate">
@@ -103,7 +128,6 @@
                 </div>
             </div>
 
-            <!-- Card 5 -->
             <div class="cert-card" onclick="showPopup('Linux-Unattached-Course-badge.png', 'NDG Achievement')">
                 <div class="cert-img-box">
                     <img src="Linux-Unattached-Course-badge.png" alt="NDG Badge">
@@ -113,7 +137,7 @@
                     <p>Professional Linux Proficiency</p>
                 </div>
             </div>
-            <!-- Certificate 6: Great Learning -->
+
             <div class="cert-card" onclick="showPopup('Great-Learning-Ethical-Hacking.jpg', 'Ethical Hacking Intro')">
                  <div class="cert-img-box">
                     <img src="Great-Learning-Ethical-Hacking.jpg" alt="Great Learning Certificate">
@@ -121,13 +145,28 @@
                 <div class="cert-info">
                      <h4>Ethical Hacking Intro</h4>
                      <p>Great Learning Academy</p>
-             </div>
-</div>
+                <!-- </div>
+                <div class="cert-card" onclick="showPopup('Great-Learning-Ethical-Hacking.jpg', 'Ethical Hacking Intro')">
+                 <div class="cert-img-box">
+                    <img src="Hacker's-rank-python.jpeg" alt="Great Learning Certificate">
+                </div>
+                <div class="cert-info">
+                     <h4>Python </h4>
+                     <p>Hacker's Rank</p>
+                </div>
+                <div class="cert-card" onclick="showPopup('Great-Learning-Ethical-Hacking.jpg', 'Ethical Hacking Intro')">
+                 <div class="cert-img-box">
+                    <img src="Google-gemini-milestone.jpeg" alt="Great Learning Certificate">
+                </div>
+                <div class="cert-info">
+                     <h4>Gemini Milestone</h4>
+                     <p>Google Gemini</p> -->
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Pop-up Overlay -->
 <div id="certPopup" class="cert-popup" onclick="closePopup()">
     <div class="popup-content" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="closePopup()">&times;</span>
@@ -139,267 +178,297 @@
     </div>
 </div> 
 
-    <!-- 01.2 DIGITAL BADGES SECTION -->
 <section class="section" id="badges">
     <div class="container">
         <span class="label reveal">01.2 VERIFIED BADGES</span>
         <h2 class="section-title reveal">Digital <br>Achievements</h2>
         
         <div class="badge-grid reveal">
-    <!-- HTB Badge -->
-<div class="badge-card active htb-style">
-    <div class="badge-icon-wrapper">
-        <img src="Cyber-starter-badge.jpg" class="badge-img">
-    </div>
-    <div class="badge-info">
-        <span class="issuer">HTB Academy</span>
-        <h4>Cyber Starter</h4>
-    </div>
-</div>
+            <div class="badge-card active htb-style">
+                <div class="badge-icon-wrapper">
+                    <img src="Cyber-starter-badge.jpg" class="badge-img">
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">HTB Academy</span>
+                    <h4>Cyber Starter</h4>
+                </div>
+            </div>
 
-<!-- Cisco Badge -->
-<div class="badge-card active cisco-style">
-    <div class="badge-icon-wrapper">
-        <img src="linux-unhatched.png" class="badge-img"> <!-- image filename updated -->
-    </div>
-    <div class="badge-info">
-        <span class="issuer">Cisco Networking Academy</span>
-        <h4>Linux Unhatched</h4>
-    </div>
-</div>
+            <div class="badge-card active cisco-style">
+                <div class="badge-icon-wrapper">
+                    <img src="linux-unhatched.png" class="badge-img">
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">Cisco Networking Academy</span>
+                    <h4>Linux Unhatched</h4>
+                </div>
+            </div>
 
-<!-- The Google cloud computing Badge -->
-<div class="badge-card active google-style">
-    <div class="badge-icon-wrapper">
-        <img src="The-Basic-of-google-cloud-compute.png" class="badge-img">
-    </div>
-    <div class="badge-info">
-        <span class="issuer">Google Cloud Computing</span>
-        <h4>Google Cloud</h4>
-    </div>
-</div>
+            <div class="badge-card active google-style">
+                <div class="badge-icon-wrapper">
+                    <img src="The-Basic-of-google-cloud-compute.png" class="badge-img">
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">Google Cloud Computing</span>
+                    <h4>Google Cloud</h4>
+                </div>
+            </div>
 
-<!-- The Google cloud Networking Badge -->
-<div class="badge-card active google-style">
-    <div class="badge-icon-wrapper">
-        <img src="Develop-your-cloud-networking.png" class="badge-img">
-    </div>
-    <div class="badge-info">
-        <span class="issuer">Google Cloud Networking</span>
-        <h4>Google Cloud Networking</h4>
-    </div>
-</div>
+            <div class="badge-card active google-style">
+                <div class="badge-icon-wrapper">
+                    <img src="Develop-your-cloud-networking.png" class="badge-img">
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">Google Cloud Networking</span>
+                    <h4>Google Cloud Networking</h4>
+                </div>
+            </div>
 
-<!-- The Google application deployment Badge -->
-<div class="badge-card active google-style">
-    <div class="badge-icon-wrapper">
-        <img src="Deploy-kubernetes-applications-on-google-cloud.png" class="badge-img">
-    </div>
-    <div class="badge-info">
-        <span class="issuer">Google Application Deployment</span>
-        <h4>Google Application Deployment</h4>
-    </div>
-</div>
+            <div class="badge-card active google-style">
+                <div class="badge-icon-wrapper">
+                    <img src="Deploy-kubernetes-applications-on-google-cloud.png" class="badge-img">
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">Google Application Deployment</span>
+                    <h4>Google Application Deployment</h4>
+                </div>
+            </div>
 
-<!-- The Google Cloud Networking Badge -->
-<div class="badge-card active google-style">
-    <div class="badge-icon-wrapper">
-        <img src="Google-Cloud-Networking.png" class="badge-img">
-    </div>
-    <div class="badge-info">
-        <span class="issuer">Google Cloud Networking</span>
-        <h4>Google Cloud Networking</h4>
-    </div>
-</div>
+            <div class="badge-card active google-style">
+                <div class="badge-icon-wrapper">
+                    <img src="Google-Cloud-Networking.png" class="badge-img">
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">Google Cloud Networking</span>
+                    <h4>Google Cloud Networking</h4>
+                </div>
+            </div>
 
-<!-- The Google Cloud Networking Badge -->
-<div class="badge-card active google-style">
-    <div class="badge-icon-wrapper">
-        <img src="Google-Machine-Learning-API.png" class="badge-img">
-    </div>
-    <div class="badge-info">
-        <span class="issuer">Google Machine Learning API's</span>
-        <h4>Google Machine Learning </h4>
-    </div>
-</div>
+            <div class="badge-card active google-style">
+                <div class="badge-icon-wrapper">
+                    <img src="Google-Machine-Learning-API.png" class="badge-img">
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">Google Machine Learning API's</span>
+                    <h4>Google Machine Learning </h4>
+                </div>
+            </div>
 
-    <!-- HTB Badge -->
-<div class="badge-card active htb-style">
-    <div class="badge-icon-wrapper">
-        <img src="Cat-linux.txt.png" class="badge-img">
-    </div>
-    <div class="badge-info">
-        <span class="issuer">Try Hack Me</span>
-        <h4>Cat Linux.txt</h4>
-    </div>
-</div>
+            <div class="badge-card active htb-style">
+                <div class="badge-icon-wrapper">
+                    <img src="Cat-linux.txt.png" class="badge-img">
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">Try Hack Me</span>
+                    <h4>Cat Linux.txt</h4>
+                </div>
+            </div>
 
-    <!-- Coming Soon Placeholder 2 -->
-    <div class="badge-card upcoming">
-        <div class="badge-icon-wrapper">
-            <i class="fas fa-shield-alt"></i>
-        </div>
-        <div class="badge-info">
-            <span class="issuer">Many More</span>
-            <h4>Processing...</h4>
-        </div>
-    </div>
-</div>
+            <div class="badge-card upcoming">
+                <div class="badge-icon-wrapper">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="badge-info">
+                    <span class="issuer">Many More</span>
+                    <h4>Processing...</h4>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-    
-    
 
-    <!-- 02. CREATIVE WORKS SECTION -->
-    <section class="section" id="poetry">
-        <div class="container">
-            <span class="label reveal">03. CREATIVE WORKS</span>
-            <h2 class="section-title reveal">Poetic <br>Dimensions</h2>
-            
-            <div class="bento-grid reveal">
-                <a href="https://words-by-akshat.vercel.app/" target="_blank" class="poetry-card">
-                    <div class="glow-effect"></div>
-                    <div class="bento-icon"><i class="fas fa-pen-nib"></i></div>
-                    <div class="bento-content">
-                        <span class="platform">Words By Akshat</span>
-                        <span class="username">Personal Poetry Collection</span>
-                    </div>
-                </a>
+<section class="section" id="tools">
+    <div class="container">
+        <span class="label reveal">01.3 SECURITY RECON & UTILITIES</span>
+        <h2 class="section-title reveal">Custom <br>Cyber Tools</h2>
+        
+        <div class="tools-grid reveal">
+            <div class="tool-card" onclick="showToolPopup('Mysterio VibePhantom', 'Advanced automation and custom penetration testing / data parsing script infrastructure. Designed for high-speed terminal diagnostics and utility manipulation.', 'https://github.com/rey-mysterio-27/Mysterio-VibePhantom', 'Uplink Ready: Repository Verified')">
+                <div class="tool-header">
+                    <i class="fas fa-ghost tool-icon" style="color: #ff007a;"></i>
+                    <span class="tool-status">Active</span>
+                </div>
+                <h4>Mysterio VibePhantom</h4>
+                <p>Custom security utility & automation framework repository.</p>
+            </div>
 
-                <a href="https://PoeticSoulWorld.vercel.app/" target="_blank" class="poetry-card">
-                    <div class="glow-effect"></div>
-                    <div class="bento-icon"><i class="fas fa-feather-alt"></i></div>
-                    <div class="bento-content">
-                        <span class="platform">Poetic Soul World</span>
-                        <span class="username">Community & Soulful Verses</span>
-                    </div>
-                </a>
+            <div class="tool-card upcoming-tool" style="opacity: 0.3; border-style: dashed;">
+                <div class="tool-header">
+                    <i class="fas fa-terminal tool-icon" style="color: var(--gray);"></i>
+                    <span class="tool-status" style="color: var(--gray); background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.05); border: 1px solid;">Locked</span>
+                </div>
+                <h4>Next Project</h4>
+                <p>Analyzing system requirements... New automation script compiling soon.</p>
             </div>
         </div>
-    </section>
-<section class="section" id="connect">
-        <div class="container">
-            <span class="label reveal">03. CONNECT</span>
-            <h2 class="section-title reveal">Digital Presence</h2>
-            <div class="connect-grid">
-    <!-- Row 1: Pehle wale 4 Cards -->
-    <a href="https://github.com/Itz-Akshat-singh" class="connect-card reveal">
-        <div class="connect-icon-box"><i class="fab fa-github"></i></div>
-        <div class="connect-info">
-            <h4>GitHub</h4>
-            <p>@Itz-Akshat-singh</p>
-        </div>
-    </a>
+    </div>
+</section>
 
-    <a href="https://t.me/Hidden_Yashh" class="connect-card reveal">
-        <div class="connect-icon-box"><i class="fab fa-telegram"></i></div>
-        <div class="connect-info">
-            <h4>Telegram</h4>
-            <p>@Hidden_Yashh</p>
+<div id="toolPopup" class="tool-popup" onclick="closeToolPopup()">
+    <div class="tool-popup-content" onclick="event.stopPropagation()">
+        <span class="tool-close-btn" onclick="closeToolPopup()">&times;</span>
+        <div class="tool-terminal-header">
+            <span class="t-dot tr"></span><span class="t-dot ty"></span><span class="t-dot tg"></span>
+            <span class="tool-terminal-title" id="toolPopupName">Tool_Logs.sh</span>
         </div>
-    </a>
-
-    <a href="https://www.instagram.com/rey.mysterio.27/" class="connect-card reveal">
-        <div class="connect-icon-box"><i class="fab fa-instagram"></i></div>
-        <div class="connect-info">
-            <h4>Instagram</h4>
-            <p>@rey.mysterio.27</p>
+        <div class="tool-popup-body">
+            <h3 id="toolDisplayTitle">Tool Name</h3>
+            <p class="tool-desc" id="toolDisplayDesc">Detailed description goes here...</p>
+            <div class="tool-terminal-box">
+                <p class="t-cmd">$ status_check --verbose</p>
+                <p class="t-reply" id="toolDisplayTerminal">Executing environment diagnostics...</p>
+            </div>
+            <a href="#" target="_blank" id="toolExecuteBtn" class="tool-exec-action-btn">Launch / View Tool Code</a>
         </div>
-    </a>
-
-    <a href="https://linktr.ee/Akshat_Singh" class="connect-card reveal">
-        <div class="connect-icon-box"><i class="fas fa-link"></i></div>
-        <div class="connect-info">
-            <h4>Linktree</h4>
-            <p>Akshat_Singh</p>
-        </div>
-    </a>
-
-    <!-- Row 2: Naye 4 Cards -->
-    <a href="mailto:rey.mysterio.2709@gmail.com" class="connect-card reveal">
-        <div class="connect-icon-box"><i class="fas fa-envelope-open-text"></i></div>
-        <div class="connect-info">
-            <h4>Mail</h4>
-            <p>Direct Contact</p>
-        </div>
-    </a>
-
-    <a href="https://www.credly.com/users/akshat-singh.2fe10112/badges#credly" target="_blank" class="connect-card reveal">
-        <div class="connect-icon-box"><i class="fas fa-award"></i></div>
-        <div class="connect-info">
-            <h4>Credly</h4>
-            <p>Verify Badges</p>
-        </div>
-    </a>
-
-    <a href="https://www.instagram.com/poeticsoulworld/" target="_blank" class="connect-card reveal">
-        <div class="connect-icon-box"><i class="fas fa-pen-nib"></i></div>
-        <div class="connect-info">
-            <h4>PoeticSoul</h4>
-            <p>@poeticsoulworld</p>
-        </div>
-    </a>
-
-    <a href="https://www.instagram.com/akshat_singh_______/" target="_blank" class="connect-card reveal">
-        <div class="connect-icon-box"><i class="fas fa-user-shield"></i></div>
-        <div class="connect-info">
-            <h4>Author</h4>
-            <p>@akshat_singh_______</p>
-        </div>
-    </a>
+    </div>
 </div>
 
-    
-
-
-    <!-- 04. CONTACT SECTION -->
-    <section class="section" id="contact">
-        <div class="container">
-            <span class="label reveal">04. CONTACT</span>
-            <h2 class="section-title reveal">Reach Out</h2>
-            
-            <div class="terminal reveal">
-                <div class="terminal-bar">
-                    <div class="btns">
-                        <span class="r"></span>
-                        <span class="y"></span>
-                        <span class="g"></span>
-                    </div>
-                    <div class="t-title">bash — contact_mysterio.sh</div>
+<section class="section" id="poetry">
+    <div class="container">
+        <span class="label reveal">02. CREATIVE WORKS</span>
+        <h2 class="section-title reveal">Poetic <br>Dimensions</h2>
+        
+        <div class="bento-grid reveal">
+            <a href="https://words-by-akshat.vercel.app/" target="_blank" class="poetry-card">
+                <div class="glow-effect"></div>
+                <div class="bento-icon"><i class="fas fa-pen-nib"></i></div>
+                <div class="bento-content">
+                    <span class="platform">Words By Akshat</span>
+                    <span class="username">Personal Poetry Collection</span>
                 </div>
-                
-                <div class="terminal-body">
-                    <div class="log">
-                        <p class="cmd">$ ping akshat_singh</p>
-                        <p class="reply">PING akshat_singh (127.9.9.2): 56 data bytes</p>
-                        <p class="reply success">Status: Connection established. Ready to collaborate.</p>
-                    </div>
+            </a>
 
-                    <form action="https://formspree.io/f/xgorgegr" method="POST" class="contact-form" id="my-form">
-                        <div class="inp-group">
-                            <label>// ENTER NAME</label>
-                            <input type="text" name="name" placeholder="Moonie" required>
-                        </div>
-                        <div class="inp-group">
-                            <label>// ENTER EMAIL</label>
-                            <input type="email" name="email" placeholder="mysterio@example.com" required>
-                        </div>
-                        <div class="inp-group">
-                            <label>// MESSAGE DATA</label>
-                            <textarea name="message" placeholder="Hey Mysterio, I wanted to reach out about..." rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="exec-btn" id="submit-btn">Execute Send_Message();</button>
-                    </form>
+            <a href="https://PoeticSoulWorld.vercel.app/" target="_blank" class="poetry-card">
+                <div class="glow-effect"></div>
+                <div class="bento-icon"><i class="fas fa-feather-alt"></i></div>
+                <div class="bento-content">
+                    <span class="platform">Poetic Soul World</span>
+                    <span class="username">Community & Soulful Verses</span>
                 </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="connect">
+    <div class="container">
+        <span class="label reveal">03. CONNECT</span>
+        <h2 class="section-title reveal">Digital Presence</h2>
+        
+        <div class="connect-grid">
+            <a href="https://github.com/rey-mysterio-27" class="connect-card reveal">
+                <div class="connect-icon-box"><i class="fab fa-github"></i></div>
+                <div class="connect-info">
+                    <h4>GitHub</h4>
+                    <p>@rey-mysterio-27</p>
+                </div>
+            </a>
+
+            <a href="https://t.me/Hidden_Yashh" class="connect-card reveal">
+                <div class="connect-icon-box"><i class="fab fa-telegram"></i></div>
+                <div class="connect-info">
+                    <h4>Telegram</h4>
+                    <p>@Hidden_Yashh</p>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/rey.mysterio.27/" class="connect-card reveal">
+                <div class="connect-icon-box"><i class="fab fa-instagram"></i></div>
+                <div class="connect-info">
+                    <h4>Instagram</h4>
+                    <p>@rey.mysterio.27</p>
+                </div>
+            </a>
+
+            <a href="https://linktr.ee/Akshat_Singh" class="connect-card reveal">
+                <div class="connect-icon-box"><i class="fas fa-link"></i></div>
+                <div class="connect-info">
+                    <h4>Linktree</h4>
+                    <p>Akshat_Singh</p>
+                </div>
+            </a>
+
+            <a href="mailto:rey_mysterio_27@wearehackerone.com" class="connect-card reveal">
+                <div class="connect-icon-box"><i class="fas fa-envelope-open-text"></i></div>
+                <div class="connect-info">
+                    <h4>Mail</h4>
+                    <p>Direct Contact</p>
+                </div>
+            </a>
+
+            <a href="https://www.credly.com/users/akshat-singh.2fe10112/badges#credly" target="_blank" class="connect-card reveal">
+                <div class="connect-icon-box"><i class="fas fa-award"></i></div>
+                <div class="connect-info">
+                    <h4>Credly</h4>
+                    <p>Verify Badges</p>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/poeticsoulworld/" target="_blank" class="connect-card reveal">
+                <div class="connect-icon-box"><i class="fas fa-pen-nib"></i></div>
+                <div class="connect-info">
+                    <h4>PoeticSoul</h4>
+                    <p>@poeticsoulworld</p>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/akshat_singh_______/" target="_blank" class="connect-card reveal">
+                <div class="connect-icon-box"><i class="fas fa-user-shield"></i></div>
+                <div class="connect-info">
+                    <h4>Author</h4>
+                    <p>@akshat_singh_______</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container">
+        <span class="label reveal">04. CONTACT</span>
+        <h2 class="section-title reveal">Reach Out</h2>
+        
+        <div class="terminal reveal">
+            <div class="terminal-bar">
+                <div class="btns">
+                    <span class="r"></span>
+                    <span class="y"></span>
+                    <span class="g"></span>
+                </div>
+                <div class="t-title">bash — contact_mysterio.sh</div>
             </div>
+            
+            <div class="terminal-body">
+                <div class="log">
+                    <p class="cmd">$ ping akshat_singh</p>
+                    <p class="reply">PING akshat_singh (127.9.9.2): 56 data bytes</p>
+                    <p class="reply success">Status: Connection established. Ready to collaborate.</p>
+                </div>
 
-            <div class="footer-note reveal">
-                <p>Join the community: <a href="https://t.me/PoeticSoulWorld" target="_blank">@PoeticSoulWorld</a></p>
+                <form action="https://formspree.io/f/xgorgegr" method="POST" class="contact-form" id="my-form">
+                    <div class="inp-group">
+                        <label>// ENTER NAME</label>
+                        <input type="text" name="name" placeholder="Moonie" required>
+                    </div>
+                    <div class="inp-group">
+                        <label>// ENTER EMAIL</label>
+                        <input type="email" name="email" placeholder="mysterio@example.com" required>
+                    </div>
+                    <div class="inp-group">
+                        <label>// MESSAGE DATA</label>
+                        <textarea name="message" placeholder="Hey Mysterio, I wanted to reach out about..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="exec-btn" id="submit-btn">Execute Send_Message();</button>
+                </form>
             </div>
         </div>
-    </section>
 
-    <script src="script.js"></script>
+        <div class="footer-note reveal">
+            <p>Join the community: <a href="https://t.me/PoeticSoulWorld" target="_blank">@PoeticSoulWorld</a></p>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
